@@ -14,10 +14,10 @@
 #
 # $Id$
 
-BUILD_DATE = \"$(shell date -u)\"
-BUILD_SHORT_DATE = \"$(shell date -u +%D)\"
-BUILD_HOST = \"$(shell hostname)\"
-BUILD_USER = \"$(shell whoami)\"
+BUILD_DATE = \"$(shell date --date='@$(PACKAGING_TIMESTAMP)' -u)\"
+BUILD_SHORT_DATE = \"$(shell date --date='@$(PACKAGING_TIMESTAMP)' -u +%D)\"
+BUILD_HOST = \"buildhost\"
+BUILD_USER = \"geeko\"
 
 CFLAGS := -Wall -Os -m32 -nostdlib
 
